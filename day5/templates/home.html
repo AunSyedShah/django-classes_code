@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Teacher Record</h1>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Save" name="save-btn">
+    <input type="submit" value="Delete" name="delete-btn">
+    <input type="submit" value="Search" name="search-btn">
+</form>
+
+{% if teachers %}
+    {% for teacher in teachers %}
+        <p>{{ teacher.teacher_id }}</p>
+        <p>{{ teacher.course_id }}</p>
+    {% endfor %}
+{% else %}
+    <h1>No Record Exists</h1>
+{% endif %}
+
+</body>
+</html>

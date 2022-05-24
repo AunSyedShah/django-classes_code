@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <title>Account Book</title>
+</head>
+<body>
+
+<form method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit">
+</form>
+{% for vehicle in vehicles %}
+    <p>{{ vehicle.vehicle_name }}</p>
+    <p>{{ vehicle.vehicle_model }}</p>
+{% endfor %}
+
+
+</body>
+
+</html>
